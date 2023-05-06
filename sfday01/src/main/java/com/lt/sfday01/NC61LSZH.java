@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-//两数之和
-public class LSZH {
+//NC61两数之和
+public class NC61LSZH {
 
     public static void main(String[] args) {
-        LSZH lszh = new LSZH();
+        NC61LSZH lszh = new NC61LSZH();
         int[] res = lszh.twoSum(new int[]{2,3,4,1,5},9);
         int[] res2 = lszh.twoSum2(new int[]{2,3,4,1,5},9);
         System.out.println(Arrays.toString(res));

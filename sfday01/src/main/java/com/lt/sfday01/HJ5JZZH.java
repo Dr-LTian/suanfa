@@ -1,10 +1,10 @@
 package com.lt.sfday01;
 
-//进制转换 16-->10
+//HJ5进制转换 16-->10
 
 import java.util.Scanner;
 
-public class JZZH {
+public class HJ5JZZH {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);//默认输入合法的16进制数，代码中不做校验
 
