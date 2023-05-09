@@ -51,6 +51,7 @@ public class HJ101ZSSZPX {
 
     public static String JH2(String[] arr,Integer order) {
 
+//        Collections.sort(Arrays.asList(arr), (o1, o2) -> Integer.parseInt(o1) - Integer.parseInt(o2));
         Collections.sort(Arrays.asList(arr), new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
@@ -67,6 +68,7 @@ public class HJ101ZSSZPX {
     public static String SZ(String[] arr,Integer order) {
         if(order == 0) {
             //升序
+//            Arrays.sort(arr, (o1, o2) -> Integer.parseInt(o1) - Integer.parseInt(o2));//lambda表达式
             Arrays.sort(arr, new Comparator<String>() {
                 @Override
                 public int compare(String o1, String o2) {
@@ -75,6 +77,7 @@ public class HJ101ZSSZPX {
             });
         } else if(order == 1) {
             //降序
+//            Arrays.sort(arr, (o1, o2) -> Integer.parseInt(o2) - Integer.parseInt(o1));
             Arrays.sort(arr, new Comparator<String>() {
                 @Override
                 public int compare(String o1, String o2) {
