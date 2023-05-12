@@ -2,7 +2,7 @@ package com.lt.sfday07;
 
 import java.util.*;
 
-//HJ41.称砝码
+//HJ41 --称砝码
 public class HJ41CFF {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
