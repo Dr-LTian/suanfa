@@ -3,10 +3,16 @@ package com.lt.sfday09;
 //岛屿问题 leetcode 200 （技术面试高频考点）
 public class LC200DYWT {
     public static void main(String[] args) {
+        char[][] grid = new char[4][];
+        grid[0] = new char[]{'1','1','1','1','0'};
+        grid[1] = new char[]{'1','1','0','1','0'};
+        grid[2] = new char[]{'1','1','0','0','0'};
+        grid[3] = new char[]{'0','0','0','0','0'};
 
+        System.out.println(numIslands(grid));
     }
 
-    public int numIslands(char[][] grid) {
+    public static int numIslands(char[][] grid) {
         boolean[][] visited = new boolean[grid.length][grid[0].length];//记录遍历过的坐标
 
         int count = 0;
@@ -22,12 +28,11 @@ public class LC200DYWT {
             }
         }
 
-
         return count;
     }
 
     //碰到1时进行搜索 默认传进来的坐标值都为1
-    public void bl(Point p, char[][] grid, boolean[][] visited) { //能传进来的值都为未走过的陆地值
+    public static void bl(Point p, char[][] grid, boolean[][] visited) { //能传进来的值都为未走过的陆地值
         int row = grid.length;
         int col = grid[0].length;
 
