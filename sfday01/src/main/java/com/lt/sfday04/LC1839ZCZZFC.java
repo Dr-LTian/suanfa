@@ -2,7 +2,7 @@ package com.lt.sfday04;
 
 import java.util.Scanner;
 
-//leetCode 1839 最长子字符串
+//LC1839 --最长子字符串
 
 /**
  * 当一个字符串满足如下条件时，我们称它是 美丽的 ：
@@ -14,6 +14,12 @@ import java.util.Scanner;
  * 给你一个只包含英文元音字母的字符串 word ，请你返回 word 中 最长美丽子字符串的长度 。如果不存在这样的子字符串，请返回 0 。
  *
  * 子字符串 是字符串中一个连续的字符序列。
+ *
+ * 思路：遍历字符串 记录出现的元音字母种类 定义3个变量 最长美丽字串长度maxLen=0 当前美丽子串长度len=1 种类数type=1
+ *      如果后一个字符 大于等于 前一个字符 (charAt(i) >= charAt(i-1))当前长度+1 (len++)
+ *      如果后一个字符 大于 前一个字符 (charAt(i) > charAt(i-1))种类+1 (type++)
+ *      如果后一个字符 小于 前一个字符 (charAt(i) < charAt(i-1))重置种类为1 当前长度为1 (len=1;type=1;)
+ *      如果种类 等于 5 (type=5) 说明元音字母全部出现 更新最长美丽子串长度 (Math.max(maxLen, len))
  */
 public class LC1839ZCZZFC {
     public static void main(String[] args) {
