@@ -1,9 +1,9 @@
 package com.lt.sfday03;
 
-//HJ20--密码合格性检验
-
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+//HJ20 --密码验证合格程序
 
 /**
  * 密码要求:
@@ -20,14 +20,14 @@ import java.util.regex.Pattern;
  * >3. .	匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 \.
  */
 
-/**
- * 自测输入：
- * 021Abc9000
- * 021Abc9Abc1
- * 021ABC9000
- * 021$bc9000
- */
 public class HJ20MMHGXJY {
+    /*
+      自测输入：
+        021Abc9000
+        021Abc9Abc1
+        021ABC9000
+        021$bc9000
+     */
     public static void main(String[] args) {
         //考验正则
         Scanner sc = new Scanner(System.in);
@@ -39,6 +39,9 @@ public class HJ20MMHGXJY {
                 System.out.println("NG");
                 continue;
             }
+
+            //除了正则  也可考虑将字符串转char[]  Character.isDigit() 判断是不是数字
+            //Character.isLowerCase() 判断是不是小写字母 Character.isUpperCase()判断是不是大写字母
 
             int count = 0; //保存匹配的种类数
             String[] regs = {"[0-9]", "[a-z]", "[A-Z]", "[^0-9a-zA-Z]"};
@@ -59,8 +62,9 @@ public class HJ20MMHGXJY {
 
             boolean flag = true;//默认不包含公共子串
             //判断条件3  不能有长度大于2的包含公共元素的子串重复
-            //str.substring(str.length()-3)截取出来的就是最后3位,保证str.substring(i+3)有3位即 i+3 <= str.length()-3  i <= str.length()-6
-            for (int i = 0; i <= str.length()-3; i++) {
+            //str.substring(str.length()-3)--截取出来的就是最后3位,
+            //保证str.substring(i+3)有3位即 i+3 <= str.length()-3  i <= str.length()-6
+            for (int i = 0; i <= str.length()-3; i++) {  //从下标为0开始取长度为3的子字符串 判断剩余的字符串中是否包含此子串
                 if(str.substring(i+3).contains(str.substring(i,i+3))){
                     System.out.println("包含长度大于2的公共字串--NG");
                     System.out.println("NG");
