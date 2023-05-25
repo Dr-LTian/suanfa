@@ -2,7 +2,14 @@ package com.lt.sfday08;
 
 import java.util.*;
 
-//leetcode 剑指offer 32 — II.从上到下打印二叉树 II
+//JZ32 --从上到下打印二叉树
+
+/*
+ 思路: 按层级打印二叉树 广度优先算法 需借助队列先进先出的数据结构
+    先将头节点入队列 然后while循环判断 队列是否为空 在循环中先判断本层总共右多少个元素即为队列的size
+    for循环遍历本层所有节点 每次出队列一个元素并将该元素的左右子节点放入队列中
+    每层遍历打印 最后队列为空说明没有下一层元素 遍历完成
+ */
 public class LCJZ32CSDXDYECS {
     public static void main(String[] args) {
         //{8,6,10,#,#,2,1}
