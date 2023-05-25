@@ -2,10 +2,20 @@ package com.lt.sfday06;
 
 import java.util.*;
 
-//leetcode 面试题08.08.有重复字符串的排列组合
+//LC08.08 --有重复字符串的排列组合
+
+/*
+    有重复字符串的排列组合。编写一种方法，计算某字符串的所有排列组合。
+
+        输入：S = "qqe"
+        输出：["eqq","qeq","qqe"]
+
+    思路:字符数组全排列 有重复字符串 先把重复字符串转char[]并排序 后续递归判断多加一个条件
+    如果被使用过 或 当前字符与上一个字符相等并且上一个字符还未使用 都跳过
+ */
 public class LC0808CFZFCPLZH {
 
-    static  Set<String> set = new HashSet<>();//存放每一次排好序的字符串
+    static Set<String> set = new HashSet<>();//存放每一次排好序的字符串
     static char[] chars;//字符串转字符数组
     static int len; //字符数组长度
     static boolean[] used; //标记对应索引位置的字母是否被使用
