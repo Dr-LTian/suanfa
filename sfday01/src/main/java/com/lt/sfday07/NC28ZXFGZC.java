@@ -3,7 +3,26 @@ package com.lt.sfday07;
 import java.util.HashMap;
 import java.util.Map;
 
-//NC28.最小覆盖子串
+//NC28 --最小覆盖子串
+
+/*
+给出两个字符串 s 和 t，要求在 s 中找出最短的包含 t 中所有字符的连续子串。
+
+注意：
+如果 s 中没有包含 t 中所有字符的子串，返回空字符串 “”；
+满足条件的子串可能有很多，但是题目保证满足条件的最短的子串唯一。
+
+输入：
+    "XDOYEZODEYXNZ","XYZ"
+返回值：
+    "YXNZ"
+
+    思路: S长T短  在S中找T  利用map 把T中所有字符放入map中 key存字符 value存放出现的次数
+    设置为负值 eg:"XYZX" -> {{X:-2},{Y:-1},{Z:-1}}
+
+    在S中先截取一个长度等于T的子字符串放入map S中的字符放入map时放正值 如果map中没有负值说明子字符串包含所有T中字符
+    将此子串放入最小字串 尝试移动左指针缩小子串 如果不出现负值说明可以缩小 出现负数继续移动右指针 以此遍历完S
+ */
 public class NC28ZXFGZC {
     public static void main(String[] args) {
         System.out.println(minWindow("XDOYEZODEYXNZ","XYZ")); //13 3
