@@ -5,7 +5,19 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-//leetcode 77.组合
+//LC77 --组合
+
+/*
+    给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。
+    你可以按 任何顺序 返回答案。
+
+    1 <= n <= 20  1 <= k <= n
+
+    思路:  范围 [1, n] k个数量的全排列  不重复的排列 递归dfs  --深度优先算法
+    是否使用过boolean[] used 深度depth 或者说找到组合的长度 长度一致符合预期 集合类copy值 最后放入最终list
+    使用过字符或字符比target数组末尾小跳出循环
+    找到符合预期最后删除target末尾元素 并将末尾元素标记为未使用 继续寻找
+ */
 public class LC77ZH {
 
     boolean[] used;
