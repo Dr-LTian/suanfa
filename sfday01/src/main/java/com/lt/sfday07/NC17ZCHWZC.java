@@ -1,6 +1,14 @@
 package com.lt.sfday07;
 
-//NC17.最长回文子串
+//NC17 --最长回文子串
+
+/*
+    对于长度为n的一个字符串A（仅包含数字，大小写英文字母），请设计一个高效算法，计算其中最长回文子串的长度。
+
+    思路1:暴力破解 双重for循环 外层从0遍历到最后 内层从最后往前遍历 找出字符串中每个字符开头的最长回文串长度
+
+    思路2:中心扩散法 两种情况 一种以当前字符为中心扩散 另一种以当前字符和下一个字符共同作为中心扩散 比较两边的元素是否相同
+ */
 public class NC17ZCHWZC {
     public static void main(String[] args) {
         System.out.println(getLongestPalindrome("ababc"));
@@ -78,5 +86,23 @@ public class NC17ZCHWZC {
         }
 
         return maxLen;
+    }
+
+    //暴力破解
+    public int getLongestPalindrome3 (String A) {
+        if(A.length() == 0) return 0;
+        int maxlen = 1; //单个字符相当于回文 长度为1
+        StringBuffer sf = new StringBuffer();
+        //找出每个字符开头的最长回文子串 最后找出最长的放在maxlen中返回
+        for(int i=0;i<A.length();++i){
+            for(int j=A.length(); j>i; j--){
+                String temp = A.substring(i,j);
+                if(sf.append(temp).reverse().toString().equals(temp)){
+                    maxlen = Math.max(maxlen, j-i);
+                }
+                sf.setLength(0);
+            }
+        }
+        return maxlen;
     }
 }
