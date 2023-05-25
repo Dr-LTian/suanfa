@@ -2,7 +2,16 @@ package com.lt.sfday08;
 
 import java.util.*;
 
-//剑指 Offer JZ25合并两个排序的链表
+//JZ25 --合并两个排序的链表
+
+/*
+    思路1: 定义一个新的链表result 随便给个头节点 最后返回result.next
+    需要3个指针 分别指向 result的当前元素 和其他需要合并的两个链表的头元素
+    如果指向需要合并的链表的指针都不为空 用while循环 判断找出比较小的值放入result.next中,并移动相应指针
+    最后其中一个会先为空 再把剩下不为空的元素全部加到result之后 最后输出
+
+    思路2：分别遍历两个链表 将所有节点当如list中并排序 之后直接遍历list 将所有节点串联成新的链表
+ */
 public class JZ25HBLGPXLB {
     public static void main(String[] args) {
 
