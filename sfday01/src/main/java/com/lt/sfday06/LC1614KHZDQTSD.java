@@ -2,7 +2,11 @@ package com.lt.sfday06;
 
 import java.util.Stack;
 
-//leetcode 1614--括号的最大嵌套深度
+//LC1614 --括号的最大嵌套深度
+
+/*
+  思路：遍历字符串,遇到左括号深度加1 遇到右括号深度减1 深度+1时 找出当前深度和最大深度的最大值 赋值给最大深度
+ */
 public class LC1614KHZDQTSD {
     public static void main(String[] args) {
         //"(1+(2*3)+((8)/4))+1"
