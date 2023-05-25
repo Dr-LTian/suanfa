@@ -1,6 +1,11 @@
 package com.lt.sfday09;
 
-//岛屿问题 leetcode 200 （技术面试高频考点）
+//LC200 --岛屿问题  （技术面试高频考点）
+
+/*
+  思路：从(0,0)开始寻找 找到1 岛屿数+1 然后向4个方向遍历 将所有与之关联的1标记为走过 相当于将1变为0--所谓的沉没岛屿
+  然后继续寻找没有走过的1 重复此过程 直至走到最后一个坐标
+ */
 public class LC200DYWT {
     public static void main(String[] args) {
         char[][] grid = new char[4][];
