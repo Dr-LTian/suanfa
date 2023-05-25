@@ -3,7 +3,14 @@ package com.lt.sfday09;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//leetcode 994.腐烂的橘子  多源广度优先算法BFS
+//LC994 --腐烂的橘子  多源广度优先算法BFS
+
+/*
+    思路:广度优先算法 借助队列先进先出 统计新鲜橘子数 记录层数 或者说秒数 第0秒到第一秒 为当前腐烂橘子 记录腐烂橘子坐标
+    腐烂橘子每过一秒感染4个方向相邻新鲜橘子 初始化队列将刚开始腐烂橘子坐标放进去
+    判断队列不为空while循环 记录每层腐烂橘子数 进循环秒数加+1
+    出栈本层腐烂橘子坐标 向4个方向传播 可以传播将 新鲜橘子数-1 将传播的位置改为2 并将传播的坐标计入queue作为下一层的数据
+ */
 public class LC994FLDJZ {
     static Queue<Point> queue = new LinkedList<>(); //广度优先算法需借助队列  先进先出
     static int count = 0; //新鲜橘子数
