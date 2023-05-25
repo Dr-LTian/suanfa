@@ -4,6 +4,15 @@ package com.lt.sfday10;
 import java.util.*;
 
 //HJ16 --购物单
+
+/*
+ 0-1 背包问题
+五种选择 1、不买主件 2、只买主件 3、主件+附件1 4、主件+附件2 5、主件+附件1+附件2
+
+ 计算每种选择带来的最大满意度 每种选择需要的花费为：v 带来的满意度为：val
+
+ 状态转移方程: m件物品 N额度  dp[m][N] = dp[m-1][N-v]+val
+ */
 public class HJ16GWD {
     /*
     1000 5
@@ -56,10 +65,10 @@ public class HJ16GWD {
     }
 
     public static void getDP2(int[][] dp, Good[] gds,int m, int N){
-        for (int i = 1; i <= m; i++) {
+        for (int i = 1; i <= m; i++) { //m为购买的件数
             //主件  //只买主件
-            int v = gds[i].v;
-            int val = gds[i].val;
+            int v = gds[i].v; //当前主件价格
+            int val = gds[i].val; //当前主件带来的满意度
             //附件1
             int fv1 = gds[i].g1 != null ? gds[i].g1.v : 0;
             int fval1 = gds[i].g1 != null ? gds[i].g1.val : 0;
