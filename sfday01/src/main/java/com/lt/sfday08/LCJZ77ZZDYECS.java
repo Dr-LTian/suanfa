@@ -5,7 +5,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//leetcode 剑指offer 77 — 之字打印二叉树 同层级打印借助队列
+//JZ77 --之字打印二叉树 同层级打印借助队列
+
+/*
+    思路: 广度优先算法 借助队列 先进先出 同时定义变量保存当前层级 奇数层正序 偶数层逆序
+        将每层的元素先正序保存 如果为偶数层借助集合类反转再添加
+ */
 public class LCJZ77ZZDYECS {
     static ArrayList<ArrayList<Integer>> list = new ArrayList<>();
     static Queue<TreeNode> queue = new LinkedList<>();
