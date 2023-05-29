@@ -13,6 +13,31 @@ public class NC17ZCHWZC {
     public static void main(String[] args) {
         System.out.println(getLongestPalindrome("ababc"));
         System.out.println(getLongestPalindrome2("ababc"));
+        System.out.println(getLongestPalindrome3("ababc"));
+        System.out.println(getLongestPalindrome4("ababc"));
+    }
+
+    public static int getLongestPalindrome4(String A) {
+        if(A.length() == 0) return 0;
+        int maxlen = 1; //单个字符相当于回文 长度为1
+
+        for(int i=0; i<A.length();++i){
+            //ABA型
+            int len1 = getMaxLen(i,i,A);
+            //ABBA型
+            int len2 = getMaxLen(i,i+1,A);
+            maxlen = Math.max(maxlen, Math.max(len1, len2));
+        }
+
+        return maxlen;
+    }
+
+    public static int getMaxLen(int left, int right, String str){
+        while(left>=0 && right<str.length() && str.charAt(left) == str.charAt(right)){
+            left--;
+            right++;
+        }
+        return right -left +1-2;
     }
 
     public static int getLongestPalindrome (String A) {
@@ -89,7 +114,7 @@ public class NC17ZCHWZC {
     }
 
     //暴力破解
-    public int getLongestPalindrome3 (String A) {
+    public static int getLongestPalindrome3(String A) {
         if(A.length() == 0) return 0;
         int maxlen = 1; //单个字符相当于回文 长度为1
         StringBuffer sf = new StringBuffer();
