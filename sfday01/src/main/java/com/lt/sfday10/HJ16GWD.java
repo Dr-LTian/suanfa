@@ -33,11 +33,10 @@ public class HJ16GWD {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNextLine()) {
             String[] arr = sc.nextLine().trim().split(" ");
-            int N = Integer.parseInt(arr[0]);
-            int m = Integer.parseInt(arr[1]);
+            int N = Integer.parseInt(arr[0]); //N额度
+            int m = Integer.parseInt(arr[1]); //m件物品
 
-            Good[] gds = new Good[m +
-                    1]; //gds[0] 不使用 从gds[1]开始 因为编号从1开始 直观一些
+            Good[] gds = new Good[m + 1]; //gds[0] 不使用 从gds[1]开始 因为编号从1开始 直观一些
             for (int i = 1; i <= m; i++) { //初始化gds
                 gds[i] = new Good(i);
             }
