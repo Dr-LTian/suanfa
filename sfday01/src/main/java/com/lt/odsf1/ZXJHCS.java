@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ZXJHCS {
+    /*
+    整数数组nums，整数k。输出将数组A中小于k的整数组合到一起的最小交换次数。
+    组合在一起是指满足条件的数字相邻，不要求相邻后在数组中的位置。
+     */
     public static void main(String[] args) {
         /*
         样例1:
