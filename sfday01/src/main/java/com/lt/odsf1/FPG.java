@@ -18,6 +18,12 @@ public class FPG {
     3 5 6
     输出：
     11
+
+    输入:
+        8
+        7258 6579 2602 6716 3050 3564 5396 1773
+    输出:
+        35165
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
